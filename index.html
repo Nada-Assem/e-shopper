@@ -1,0 +1,771 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-shopper</title>
+    <script src="./handlebars.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='./main.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#home" class="nav_logo">
+                <i class="bx bxs-shopping-bags nav_logo-icon"></i>e-shopper
+            </a>
+            <div class="nav_menu" id="nav-menu">
+                <ul class="nav_list">
+                    <il class="nav_item">
+                        <a href="#home" class="nav_link active-link">
+                            Home
+                        </a>
+                    </il>
+                    <il class="nav_item">
+                        <a href="#shop" class="nav_link ">
+                            Shop
+                        </a>
+                    </il>
+                    <il class="nav_item">
+                        <a href="#cart" class="nav_link">
+                            Cart
+                        </a>
+                    </il>
+                    <!-- <il class="nav_item">
+                        <a href="#blog" class="nav_link">
+                            Blog
+                        </a>
+                    </il> -->
+                    <il class="nav_item">
+                        <a href="#faq" class="nav_link">
+                            Faq's
+                        </a>
+                    </il>
+                    <il class="nav_item">
+                        <a href="#contact" class="nav_link">
+                            Contact
+                        </a>
+                    </il>
+                </ul>
+            </div>
+            <div class="nav_btns">
+                <div class="login_taggle" id="login-toggle">
+                    <i class="bx bx-user"></i>
+                </div>
+
+                <div class="nav_shop" id="cart-shop">
+                    <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                        aria-controls="offcanvasRight"><i class="bx bx-shopping-bag"></i></button>
+
+
+                </div>
+
+                <div class="nav_taggle" id="nav-toggle">
+                    <i class="bx bx-grid-alt"></i>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <h4 class="text-center ">My Cart</h4>
+            <!-- <section class="aside-cart row p-4">
+            <img class="col-5 img-fluid" src="./pyramid-logo-vector-icon-2950338.jpg" alt="" srcset="">
+            <div class="col-5">
+                <h6>Lorem ipsum dolor</h6>
+                <h6 class="aside-cart price">455$</h6>
+                <buttoun class="btn">-</buttoun>
+                <span class="aside-cart quantity"></span>
+                <button class="btn">+</button>
+            </div>
+            <button class="col-1 delete aside-cart" style="align-self: flex-end;">&</button>
+        </section> -->
+        </div>
+    </div>
+    <div id="content"></div>
+    <!--------------- Footer------------>
+    <footer class="footer section">
+        <div class="footer_container container grid">
+            <!-- Footer Content 1 -->
+            <div class="footer_content">
+                <a href="" class="footer_logo">
+                    <i class="bx bxs-shopping-bags footer_logo-icon"></i>e-shopper
+                </a>
+
+                <p class="footer_description">Enjoy the biggest sale<br> of your life.</p>
+                <div class="footer_social">
+                    <a href="#" class="footer_social-link">
+                        <i class="bx bxl-facebook"></i>
+                    </a>
+                    <a href="#" class="footer_social-link">
+                        <i class="bx bxl-twitter"></i>
+                    </a>
+                    <a href="#" class="footer_social-link">
+                        <i class="bx bxl-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- footer content 2 -->
+            <div class="footer_content">
+                <h3 class="footer_title">About</h3>
+
+                <ul class="footer_links">
+                    <li><a href="" , class="footer_link">About Us</a></li>
+                    <li><a href="" , class="footer_link">Customer Support</a></li>
+                    <li><a href="" , class="footer_link">Support Center</a></li>
+                </ul>
+            </div>
+
+            <!-- footer content 3 -->
+            <div class="footer_content">
+                <h3 class="footer_title">Our Services</h3>
+
+                <ul class="footer_links">
+                    <li><a href="" , class="footer_link">Shop</a></li>
+                    <li><a href="" , class="footer_link">Discounts</a></li>
+                    <li><a href="" , class="footer_link">Shopping mode</a></li>
+                </ul>
+            </div>
+
+            <!-- footer content 4 -->
+            <div class="footer_content">
+                <h3 class="footer_title">Our Company</h3>
+
+                <ul class="footer_links">
+                    <li><a href="" , class="footer_link">Register</a></li>
+                    <li><a href="" , class="footer_link">Contact Us </a></li>
+                    <li><a href="" , class="footer_link">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <span class="footer_copy">
+            &#169; Crypticalcoder. All rights reserved
+        </span>
+    </footer>
+    <script id="home-template" type="text/template">
+        <main class="main">
+            <section class="homemain container home">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class=" home">
+                    <div class="home-slider">
+                        <!-- Home slide 1 -->
+                        <section class="slide home">
+                            <div class="home_content grid">
+                                <div class="home_group">
+                                    <img src="./Cardigan.png" alt="" class="home_img">
+                                    <div class="home_indicator"></div>
+                                    <div class="home_details-img">
+                                        <h4 class="home_details-title">The "Cardigan"</h4>
+                                        <span class="home_details-subtitle">Woolen</span>
+                                    </div>
+                                </div>
+        
+                                <div class="home_data">
+                                    <h3 class="home_subtitle">#1 TRENDING ITEM</h3>
+                                    <h1 class="home_title">
+                                        ORIGINAL<br> IS NEVER <br> FINISHED! ! 
+                                    </h1>
+                                    <p class="home_description">
+                                        This is a place of hope, meaning and purpose, Visit and become a part of something bigger - a movement that is
+                                        changing lives,
+                                    </p>
+                                    <div class="home_buttons">
+                                        <a href="#" class="button">Buy NOW</a>
+                                        <a href="#" class="button-link button-flex">View Details
+                                            <i class="bx bx-right-arrow-alt button_icon"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+        
+                        <!-- Home slide 2 -->
+                        <section class="slide home">
+                            <div class="home_content grid">
+                                <div class="home_group">
+                                    <img src="./suit.jpg" alt="" class="home_img">
+                                    <div class="home_indicator"></div>
+                                    <div class="home_details-img">
+                                        <h4 class="home_details-title">Jqueezy</h4>
+                                        <span class="home_details-subtitle">Ski Suit</span>
+                                    </div>
+                                </div>
+        
+                                <div class="home_data">
+                                    <h3 class="home_subtitle">#2 top best duo</h3>
+                                    <h1 class="home_title">
+                                        FALL<br> WINTER <br> 2023
+                                    </h1>
+                                    <p class="home_description">
+                                        A specialist label creating luxury essentials.
+                                        Ethically crafted with an unwavering to exceptional quality.
+                                    </p>
+                                    <div class="home_buttons">
+                                        <a href="#" class="button">Buy NOW</a>
+                                        <a href="#" class="button-link button-flex">View Details
+                                            <i class="bx bx-right-arrow-alt button_icon"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+        
+                <!-- Home slide 3 -->
+                        <section class="slide home">
+                            <div class="home_content grid">
+                                <div class="home_group">
+                                    <img src="./3.jpg" alt="" class="home_img">
+                                    <div class="home_indicator"></div>
+                                    <div class="home_details-img">
+                                        <h4 class="home_details-title">T-shirt</h4>
+                                        <span class="home_details-subtitle">cotton</span>
+                                    </div>
+                                </div>
+        
+                                <div class="home_data">
+                                    <h3 class="home_subtitle">#3 TRENDING ITEM</h3>
+                                    <h1 class="home_title">
+                                        SALE 20%<br> OFF ON  <br> EVERYTHING 
+                                    </h1>
+                                    <p class="home_description">
+                                        A specialist label creating luxury essentials.
+                                        Ethically crafted with an unwavering to exceptional quality.
+                                    </p>
+                                    <div class="home_buttons">
+                                        <a href="#" class="button">Buy NOW</a>
+                                        <a href="#" class="button-link button-flex">View Details
+                                            <i class="bx bx-right-arrow-alt button_icon"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <a class="prev" onclick="plusSlides(-1)">❮</a>
+                        <a class="next" onclick="plusSlides(1)">❯</a>                   
+                    </div>
+                    </div>
+        
+                </div>
+            </section>
+            <section class="discount section home">
+                <div class="discount_container container home grid" >
+                    <img class="discount_img" src="./discount.jpg" alt="">
+        
+                    <div class="discount_data">
+                    <h2 class="discount_title">
+                        50% Discount <br> On New Products
+                    </h2>
+                    <a href="" class="button">
+                        Go to new
+                    </a>
+                </div>
+                </div>
+            </section>
+            <!------------------New Arrivals------------------- -->
+            <section class="new section home">
+                <h1 class="section_title">
+                    New Arrivals
+                </h1>
+                <div class="new_container home container">
+                <div class="row">
+                        <!-- New Content 1 -->
+                       
+                 </div>
+        
+                </div>
+            </section>
+        
+        
+            <!---------Step------------------->
+            <section id="steps section home container" class="home">
+                <div class="steps_bg">
+                    <h2 class="section_title">
+                        How to order products<br>from e-shopper
+                    </h2>
+                    <div class="steps_container grid">
+                        <!-- Step Card 1 -->
+                        <div class="steps_card">
+                            <div class="steps_card-number">01.</div>
+                            <h3 class="steps_card-title">
+                                Choose Products
+                            </h3>
+                            <p class="steps_card-description">
+                                We have several varieties products you can form.
+                            </p>
+                        </div>
+        
+                        <!-- Step Card 2 -->
+                        <div class="steps_card">
+                            <div class="steps_card-number">02.</div>
+                            <h3 class="steps_card-title">
+                                Place an order
+                            </h3>
+                            <p class="steps_card-description">
+                                Once your order is set, we move to the next step which is the shipping.
+                            </p>
+                        </div>
+        
+                        <!-- Step Card 3 -->
+                        <div class="steps_card">
+                            <div class="steps_card-number">03.</div>
+                            <h3 class="steps_card-title">
+                                    Get order delivered
+                            </h3>
+                            <p class="steps_card-description">
+                                Our delivery process is easy , you receive the order direct to your home.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </script>
+    <script id="shop-template" type="text/template">
+        <section class="shop">
+            <h3 class="shop breadcrum_title">Shope Page</h3>
+            <p class="shop breadcrum_subtitle">Home <span class="shop"> > Shope</span></p>
+    
+            <!-- <div id="coloSelector" class="shop group">
+                
+                <ul  class="shop color-grid">
+                    
+                  <li class="shop color-option is-selected" data-color="#5B00B7"></li>
+                  <li class="shop color-option" data-color="#3a68b7"></li>
+                  <li class="shop color-option" data-color="#34b7b0"></li>
+                  <li class="shop color-option" data-color="#4f8f44"></li>
+                  <li class="shop color-option" data-color="#c0582f"></li>
+                  <li class="shop color-option" data-color="#a83030"></li>
+                  <li class="shop color-option" data-color="#994385"></li>
+                  
+                </ul>
+                <i class="shop fa-solid fa-gear" id="btn" style="font-size: 25px;"></i>
+              </div> -->
+            <div class="shop container">
+                <div class="shop row myStyle">
+                    <div class="shop col-3 left">
+                        <h5 class="shop section_filter">Section Filter</h5>
+                        <div class="shop filter_item">
+                            <h6 class="shop" >Condition</h6>
+                            <div class="shop row f_se">
+                                <div class="shop col-5">
+                                    <input class="shop"  type="checkbox"><span>New</span>
+                                </div>
+                                <span  class="shop col-2" style="padding-left: 0px;">(13)</span>
+                                <div class="shop col-5">
+                                    <input class="shop"  type="checkbox"><span>Scale</span>
+                                </div>
+                                <span  class="shop col-2" style="padding-left: 0px;">(13)</span>
+                            </div>
+                            
+                        </div>
+    
+                        <div class="shop filter_item">
+                            <h6 class="shop" >Size</h6>
+                            <div class="shop row f_se">
+                                <div class="shop col-5">
+                                    <input class="shop"  type="checkbox"><span>S</span>
+                                </div>
+                                <span  class="shop col-2" style="padding-left: 0px;">(13)</span>
+                                <div class="shop col-5">
+                                    <input class="shop"  type="checkbox"><span>M</span>
+                                </div>
+                                <span  class="shop col-2" style="padding-left: 0px;">(13)</span>
+                                <div class="shop col-5">
+                                    <input class="shop"  type="checkbox"><span>L</span>
+                                </div>
+                                <span  class="shop col-2" style="padding-left: 0px;">(13)</span>
+                            </div>
+                            
+                        </div>
+                        <div class="shop filter_item">
+                            <h6 class="shop" >Categories</h6>
+                            <div class="shop row f_se">
+                                <div class="shop col-5">
+                                    <input class="shop"  type="checkbox"><span>Women</span>
+                                </div>
+                                <span  class="shop col-2" style="padding-left: 0px;">(2)</span>
+                                <div class="shop col-5">
+                                    <input class="shop"  type="checkbox"><span>Men</span>
+                                </div>
+                                <span  class="shop col-2" style="padding-left: 0px;">(4)</span>
+                                <div class="shop col-5">
+                                    <input class="shop"  type="checkbox"><span>Kids</span>
+                                </div>
+                                <span  class="shop col-2" style="padding-left: 0px;">(13)</span>
+                                <div class="shop col-5">
+                                    <input class="shop"  type="checkbox"><span>Other</span>
+                                </div>
+                                <span  class="shop col-2" style="padding-left: 0px;">(4)</span>
+                            </div>
+                            
+                        </div>
+                        <div class="shop filter_item">
+                            <h6 class="shop" >Styles</h6>
+                            <div class="shop row f_se">
+                                <div class="shop col-5">
+                                    <input class="shop"  type="checkbox"><span>Casual</span>
+                                </div>
+                                <span  class="shop col-2" style="padding-left: 0px;">(2)</span>
+                                <div class="shop col-5">
+                                    <input class="shop"  type="checkbox"><span>Dressy</span>
+                                </div>
+                                <span  class="shop col-2" style="padding-left: 0px;">(4)</span>
+                                <div class="shop col-5">
+                                    <input class="shop"  type="checkbox"><span>Girly</span>
+                                </div>
+                                <span  class="shop col-2" style="padding-left: 0px;">(6)</span>
+                            </div>
+                        </div>
+                        <div class="shop filter_item">
+                            <h6 class="shop" >Sub Categories</h6>
+                            <div class="shop row f_se">
+                                <div class="shop col-5">
+                                    <input class="shop"  type="checkbox"><span>Jackets</span>
+                                </div>
+                                <span  class="shop col-2" style="padding-left: 0px;">(2)</span>
+                                <div class="shop col-5">
+                                    <input class="shop"  type="checkbox"><span>T-shirts</span>
+                                </div>
+                                <span  class="shop col-2" style="padding-left: 0px;">(4)</span>
+                                <div class="shop col-5">
+                                    <input class="shop"  type="checkbox"><span>Accessories</span>
+                                </div>
+                                <span  class="shop col-2" style="padding-left: 0px;">(6)</span>
+                                <div class="shop col-5">
+                                    <input class="shop"  type="checkbox"><span>Shoes</span>
+                                </div>
+                                <span  class="shop col-2" style="padding-left: 0px;">(4)</span>
+                                <div class="shop col-5">
+                                    <input class="shop"  type="checkbox"><span>Coats</span>
+                                </div>
+                                <span  class="shop col-2" style="padding-left: 0px;">(6)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shop col-8 right">
+                        <div class="shop row productss">
+                           
+                            
+                            
+                        </div>
+                        <!-- <input type="radio" name="page" id="page1-input" checked>
+                        <input type="radio" name="page" id="page2-input">
+                        <input type="radio" name="page" id="page3-input">
+                        <input type="radio" name="page" id="page4-input">
+                        <input type="radio" name="page" id="page5-input"> -->
+    <div>
+        <!-- <div class="shop content">
+          <div class="shop page page1">
+              
+          </div>
+          <div class="shop page page2">
+            <div class="shop item"></div>
+            <div class="shop item"></div>
+            <div class="shop item"></div>
+            <div class="shop item"></div>
+            <div class="shop item"></div>
+            <div class="shop item"></div>
+          </div>
+          <div class="shop page page3">
+            <div class="shop item"></div>
+            <div class="shop item"></div>
+            <div class="shop item"></div>
+            <div class="shop item"></div>
+            <div class="shop item"></div>
+            <div class="shop item"></div>
+          </div>
+          <div class="shop page page4">
+            <div class="shop item"></div>
+            <div class="shop item"></div>
+            <div class="shop item"></div>
+            <div class="shop item"></div>
+            <div class="shop item"></div>
+            <div class="shop item"></div>
+          </div>
+          <div class="shop page page5">
+            <div class="shop item"></div>
+            <div class="shop item"></div>
+            <div class="shop item"></div>
+            <div class="shop item"></div>
+            <div class="shop item"></div>
+            <div class="shop item"></div>
+          </div>
+        </div> -->
+        <!-- <div class="shop navigation">
+    
+          <div class="shop navigation-wrapper">
+            <div class="shop arrow arrow-left">
+              <span>&lt;</span>
+              <label for="page1-input"></label>
+              <label for="page2-input"></label>
+              <label for="page3-input"></label>
+              <label for="page4-input"></label>
+              <label for="page5-input"></label>
+            </div>
+            <label class="shop nav-item nav-page1" for="page1-input">
+              <div>1</div>
+            </label>
+            <label class="shop nav-item nav-page2" for="page2-input">
+              <div>2</div>
+            </label>
+            <label class="shop nav-item nav-page3" for="page3-input">
+              <div>3</div>
+            </label>
+            <label class="shop nav-item nav-page4" for="page4-input">
+              <div>4</div>
+            </label>
+            <label class="shop nav-item nav-page5" for="page5-input">
+              <div>5</div>
+            </label>
+            <div class="shop arrow arrow-right">
+              <span>&gt;</span>
+              <label for="page1-input"></label>
+              <label for="page2-input"></label>
+              <label for="page3-input"></label>
+              <label for="page4-input"></label>
+              <label for="page5-input"></label>
+            </div>
+          </div>
+        </div> -->
+        <div id="pagination"></div>
+      </div>
+                        
+        
+                    </div>
+                </div>
+                
+            </div>
+        </section>    
+     </script>
+    <script id="cart-template" type="text/template">
+        <div class="theheader">
+            <h1>Card Page</h1>
+            <i
+              class="fa-solid fa-xmark"
+              style="
+                font-size: 2rem;
+                color: black;
+                position: absolute;
+                top: 1.25rem;
+                right: 0.9rem;
+                cursor: pointer;
+              "
+            ></i>
+            <p class="para1">
+              home<span> &gt; </span> <span class="red-color"> card</span>
+            </p>
+          </div>
+         
+        <!--end of the first div-->
+        <div class="cart">
+        
+            <div class="cart_container" id="cart_container">
+                <div class="all_cart_container"></div>
+                <div class="theRightDiv">
+        
+                </div>
+            </div>
+            
+        </div>
+    </script>
+    <!-- <script id="blog-template" type="text/template">
+        here is the blog page content
+    </script> -->
+    <script id="faq-template" type="text/template">
+        <h3 class="shop breadcrum_title">FAQ'S Page</h3>
+        <p class="shop breadcrum_subtitle">Home <span class="shop"> > FAQ'S</span></p>
+        <section id="faq" class="p-4">
+            <div class="accordion row" id="accordionExample">
+                <div class="col-12 col-md-6">
+                    <!-- <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Accordion Item #1
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Accordion Item #3
+                          </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div> -->
+                </div>
+                <div class="col-12 col-md-6">
+                    <!-- <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Accordion Item #2
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div> -->
+                </div>
+              </div>
+        </section>
+    </script>
+    <script id="contact-template" type="text/template">
+        <h3 class="shop breadcrum_title">CONTACT Page</h3>
+        <p class="shop breadcrum_subtitle">Home <span class="shop"> > CONTACT US</span></p>
+        <section id="contact">
+            <div class="container">
+                <div class="row mt-3">
+                    <div class="col-md-6 col-12">
+                        <div class="fs-2 fw-bolder" id="contactData">CONTACT US</div>
+                        <ul class="list-unstyled">
+                            <li class="my-2">
+                                <a href="tel:4506944444" class="d-inline-flex p-0" style="font-size: inherit;">
+                                    <p class="p-0 theme-color " style=";font-size: inherit;    -webkit-margin-after: 0;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#c0582f"
+                                            class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                                        </svg>
+                                        <div class="d-flex" style="flex-wrap:wrap; width:80%">
+                                            <h5 style="width:100%">Call ME</h5>
+                                            <p>450-694-4444</p>
+                                          </div>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="my-2">
+                                <a href="https://wa.me/15142999982" class="d-inline-flex p-0" style="font-size: inherit;">
+                                    <p class="p-0 theme-color " style=";font-size: inherit;    -webkit-margin-after: 0;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 448 512"
+                                            fill="#c0582f">
+                                            <path
+                                                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                                        </svg>
+                                        <div class="d-flex" style="flex-wrap:wrap; width:80%">
+                                            <h5 style="width:100%">chat with me</h5>
+                                            <p> 514-299-9982</p>
+                                          </div>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="my-2">
+                                <a href="mailto:sthubert.taxicomp@gmail.com" class="d-inline-flex p-0"
+                                    style="font-size: inherit;">
+                                    <p class="p-0  text- theme-color"
+                                        style=";font-size: inherit;    -webkit-margin-after: 0;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#c0582f"
+                                            class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+                                        </svg>
+                                        <div class="d-flex" style="flex-wrap:wrap; width:80%">
+                                            <h5 style="width:100%">Email</h5>
+                                            <p> sthubert.taxicomp@gmail.com</p>
+                                          </div>
+                                    </p>
+                                </a>
+                            </li>
+                            
+                            <li class="my-2">
+                                <a href="https://maps.app.goo.gl/ZbTrJJhnwB6LTeKz8" class="d-inline-flex p-0"
+                                    style="font-size: inherit;">
+                                    <p class="p-0 theme-color" style=";font-size: inherit;    -webkit-margin-after: 0;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 384 512"
+                                            fill="#c0582f">
+                                            <path
+                                                d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+                                        </svg>
+                                        <div class="d-flex" style="flex-wrap:wrap; width:80%">
+                                            <h5 style="width:100%">Email</h5>
+                                            <p> sthubert.taxicomp@gmail.com</p>
+                                        </div>
+                                        <h5></h5>
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-12 my-5">
+                        <form id="contactForm">
+                            <div class="mb-3 row">
+                                 <div class="col-sm-6 col-12">
+                                    <input type="text" class="form-control"name="name" placeholder="*name" pattern="[a-zA-Z]{3,30}+$" title='please enter a real name that Consists of letters only and 3 letter at least' required  id="contactName" aria-describedby="emailHelp">
+                                </div>
+                                 <div class="col-sm-6 col-12">
+                                    <input type="email" class="form-control" name="email"placeholder="*Courriel" required id="contactEmail" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <div class=" col-12">
+                                    <input type="text" class="form-control" name="subject"placeholder="subject" required id="subject" aria-describedby="emailHelp">
+                                </div></div>
+                            <div class="form-floating">
+                              <textarea class="form-control" placeholder="Leave a comment here" name="message" id="floatingTextarea2" style="height: 100px"></textarea>
+                              <label for="floatingTextarea2"id="contactMessage">Message</label>
+                            </div >
+                            <button type="submit" class=" btn  my-3"    data-action='submit' id="contactSendBtn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </script>
+    <script id="product-template" type="text/template">
+        <section class="detailsBody">
+            <h3 class="DetailsTitle" >Details Page</h3>
+            <h2 class="DetailsSubtitle">Home ><span style="color: orange;"> Details</span></h2>
+            <header class="detailsheader">
+                
+                <div><img id="image" src="" alt="Image" style="width: 200px;"></div>
+            </header>
+            <div class=" product-details">
+                <h4 id="title"></h4>
+                <span id="category"></span>
+                <div class="rating">
+                    <div class="stars">
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bx-star"></i>
+                    </div>
+                    <span class="reviews__count">40 + Reviews</span>
+                </div>
+                <div id="price" class="product-price-details"></div>
+                <button  class="add-to-cart-btn detailsCart">Add to Cart</button>
+            </div>
+        </section>
+    </script>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
