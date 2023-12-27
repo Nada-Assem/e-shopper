@@ -49,6 +49,7 @@ function HandleNavigation() {
             break;
         default:
             renderContent(renderHome(), "content");
+            load('home.js')
             break;
     }
 

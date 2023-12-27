@@ -1490,6 +1490,6 @@ section.home{
 .cart_container{
   margin-top: 2rem;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: space-around;
 }

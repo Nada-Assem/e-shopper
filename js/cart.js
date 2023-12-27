@@ -6,15 +6,11 @@ var cards=JSON.parse(localStorage.getItem('cartItems')) || []
 async function a (){
     console.log('a')
     await Promise.all(cards.map(async(item)=>{
-        console.log(item)
         let itemDetails=await fetch(`https://fakestoreapi.com/products/${item.id}`)
         itemDetails=await itemDetails.json()
-        console.log(itemDetails);
+        itemDetails.quantity=item.quantity
         listProduct.push(itemDetails)
-        console.log(listProduct)
-        console.log('b');
      }))
-     console.log('c');
      addDataToHTML();  
      addDataToHTML1();
 }
@@ -122,7 +118,7 @@ minus.style.padding="2px"
 const  cart_Amount_number = document.createElement("span");
 cart_Amount_number.classList.add("cart_Amount_number");
 cart_Amount_content.appendChild(cart_Amount_number);
-cart_Amount_number.innerText="1";
+cart_Amount_number.innerText=product.quantity;
 cart_Amount_number.style.fontSize="1.25rem";
 cart_Amount_number.style.margin="10px";
 
@@ -166,20 +162,20 @@ plus.style.padding="2px"
                 });
             
    
- const love_Icon = document.createElement("div");
- love_Icon.classList.add("love_Icon");
- eachcard.appendChild(love_Icon);
- love_Icon.style.marginTop="150px";
- love_Icon.style.marginLeft="600px";
- love_Icon.style.color="red";
- love_Icon.style.cursor="pointer";
- love_Icon.style.position="absolute"
+//  const love_Icon = document.createElement("div");
+//  love_Icon.classList.add("love_Icon");
+//  eachcard.appendChild(love_Icon);
+//  love_Icon.style.marginTop="150px";
+//  love_Icon.style.marginLeft="600px";
+//  love_Icon.style.color="red";
+//  love_Icon.style.cursor="pointer";
+//  love_Icon.style.position="absolute"
  
 
- const  love = document.createElement("i");
- love_Icon.classList.add("fa-regular");
- love_Icon.classList.add("fa-heart");
- love_Icon.appendChild(love);
+//  const  love = document.createElement("i");
+//  love_Icon.classList.add("fa-regular");
+//  love_Icon.classList.add("fa-heart");
+//  love_Icon.appendChild(love);
 
  const card_trash2 = document.createElement("div");
  card_trash2.classList.add("fa-solid");
@@ -201,7 +197,6 @@ eachcard.style.display="flex";
 eachcard.style.backgroundColor="rgb(128 128 128 / 10%)";
 eachcard.style.margin="10px";
 eachcard.style.padding="10px";
-listproductHtml.style.width="70%";
  listproductHtml.appendChild(eachcard);
 
 
@@ -217,7 +212,10 @@ console.log('in fun1')
         theRightElement.innerHTML='';
         console.log(cards);
         if(cards.length>0){
-            cards.forEach(card =>{
+            let subtotal=0
+            listProduct.forEach((product ,i)=>{
+                subtotal+=product.quantity*product.price
+            })
 
 const therightCart=document.createElement("div");
 therightCart.classList.add("therightCart");
@@ -245,7 +243,7 @@ sub_total_Card.appendChild(sub_total_Card1);
 
 const card_price1=document.createElement("span");
 card_price1.classList.add("card_price1");
-card_price1.innerText="$48.00";
+card_price1.innerText=subtotal+"$";
 card_price1.style.fontSize="1.5rem";
 sub_total_Card1.style.margin="2rem";
 
@@ -288,7 +286,7 @@ card_total_shipping.appendChild(card_total_shipping1);
 
 const card_price3=document.createElement("span");
 card_price3.classList.add("card_price3");
-card_price3.innerText="$50.22";
+card_price3.innerText=subtotal+4.99+'$';
 card_price3.style.fontSize="1.5rem";
 card_price3.style.margin="2rem";
 card_total_shipping.appendChild(card_price3);
@@ -310,7 +308,6 @@ therightCart.style.width="100%";
 therightCart.style.textAlign="center";
 
 theRightElement.appendChild(therightCart);
-})
 }
 }
 
