@@ -87,6 +87,7 @@ function addToCart(imageId) {
     // Provide feedback to the user (optional)
     listCartItems()
     
+    
 }
 async function listCartItems(){
     let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -128,6 +129,10 @@ function decre(item){
     } 
     localStorage.setItem('cartItems', JSON.stringify(cartItems))
     listCartItems()
+    if(window.location.hash.split('?')[0]=="#cart"){
+        console.log('a')
+        fillCartPage()
+    }
 }
 function incre(item){
     let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -139,6 +144,10 @@ function incre(item){
     }
     localStorage.setItem('cartItems', JSON.stringify(cartItems))
     listCartItems(item)  
+    if(window.location.hash.split('?')[0]=="#cart"){
+        console.log('a')
+        fillCartPage()
+    }
 }
 function deleteItem(item){
     let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -150,6 +159,10 @@ function deleteItem(item){
     }
     localStorage.setItem('cartItems', JSON.stringify(cartItems))
     listCartItems()
+    if(window.location.hash.split('?')[0]=="#cart"){
+        console.log('a')
+        fillCartPage()
+    }
 }
 window.addEventListener("load", HandleNavigation);
 window.addEventListener("hashchange", HandleNavigation);

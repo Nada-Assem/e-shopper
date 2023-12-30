@@ -759,7 +759,9 @@ a
     font-weight: 600;
     transition: background-color 0.21s cubic-bezier(0.23, 1, 0.320, 1);
   }
-  
+  .main a,footer a,header a {
+    text-decoration: none;
+}
   .navigation:before.shop{
     content: '';
     position: absolute;
