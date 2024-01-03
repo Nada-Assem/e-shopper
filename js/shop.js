@@ -14,29 +14,21 @@ function getValue(e)
         pro=""
         as()
     }
-    console.log(catFilter)
 }
 
 // document.addEventListener('DOMContentLoaded', function() {
-    let products = document.querySelector('.productss');
+    var products = document.querySelector('.productss');
     function as() {
-        console.log('c')
         async function fetchProducts(url) {
             try {
                 pro=''
-        console.log('d')
                 let data = await fetch(url);
                 let response = await data.json();
                 if(catFilter.length){
-                    console.log('a')
                     for (let i = 0; i < response.length; i++) {
-                        // console.log( response[i].category)
-                        // console.log("res of "+i+" value = "+ response[i].category);
                         for (let index = 0; index < catFilter.length; index++) {
-                            // console.log("cat of "+index+" value = "+ catFilter[index]);
                             
                             if (catFilter[index]==response[i].category) {
-                                console.log("in if");
                                 let description = response[i].description;
                         let title = response[i].title;
                         pro += `
@@ -96,7 +88,6 @@ function getValue(e)
                    `;
                     }
                 }
-                                // console.log(pro);
                                 products.innerHTML=pro;
             } catch (err) {
                 console.log(err);

@@ -1,7 +1,6 @@
 (async function getFAQ(){
 let faq=await fetch('./faq.json')
 faq=await faq.json()
-console.log(faq)
 faq.forEach((element,i) => {
     if(i%2){
         document.querySelectorAll('#faq .col-12')[1].innerHTML+=`<div class="accordion-item">

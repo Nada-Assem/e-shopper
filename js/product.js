@@ -1,6 +1,5 @@
 
 // Get the ID from the URL query string
-console.log(window.location.hash)
 var urlParams = new URLSearchParams(window.location.hash.split('?')[1]);
 var imageId = urlParams.get('id');
 var price1;
@@ -26,7 +25,6 @@ async function fetchImageDetails() {
         category.textContent = data.category;
         price.textContent = `Price:${data.price}$`;
          price1 = parseFloat(price.textContent.match(/\d+\.\d+/)[0]);
-        //  console.log(price1)
     } catch (err) {
         console.log(err);
     }

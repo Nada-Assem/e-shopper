@@ -19,7 +19,6 @@ function load(fileName) {
 }
 function HandleNavigation() {
     const hash = window.location.hash.split('?')[0];
-    console.log(hash)
     switch (hash) {
         case "#home":
             renderContent(renderHome(), "content");
@@ -65,7 +64,6 @@ function addToCart(imageId) {
         // Product already exists in cart, update quantity and price
         cartItems[existingProductIndex].quantity++;
         // cartItems[existingProductIndex].price += price1;
-        // console.log(price1)
 
         // cartItems[existingProductIndex].price += parseFloat(price.textContent);
     } else {
@@ -119,7 +117,7 @@ function decre(item){
     let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     const index=cartItems.findIndex(el=>el.id==item)
     if(index<0){
-        console.log('there is something wrong this otem is not exist in your cart')
+        console.log('there is something wrong this item is not exist in your cart')
     }else{
         if(cartItems[index].quantity>1){ 
         cartItems[index].quantity--
@@ -130,7 +128,6 @@ function decre(item){
     localStorage.setItem('cartItems', JSON.stringify(cartItems))
     listCartItems()
     if(window.location.hash.split('?')[0]=="#cart"){
-        console.log('a')
         fillCartPage()
     }
 }
@@ -138,14 +135,13 @@ function incre(item){
     let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     const index=cartItems.findIndex(el=>el.id==item)
     if(index<0){
-        console.log('there is something wrong this otem is not exist in your cart')
+        console.log('there is something wrong this item is not exist in your cart')
     }else{
         cartItems[index].quantity++
     }
     localStorage.setItem('cartItems', JSON.stringify(cartItems))
     listCartItems(item)  
     if(window.location.hash.split('?')[0]=="#cart"){
-        console.log('a')
         fillCartPage()
     }
 }
@@ -153,14 +149,13 @@ function deleteItem(item){
     let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     const index=cartItems.findIndex(el=>el.id==item)
     if(index<0){
-        console.log('there is something wrong this otem is not exist in your cart')
+        console.log('there is something wrong this item is not exist in your cart')
     }else{
         cartItems.splice(index,1)
     }
     localStorage.setItem('cartItems', JSON.stringify(cartItems))
     listCartItems()
     if(window.location.hash.split('?')[0]=="#cart"){
-        console.log('a')
         fillCartPage()
     }
 }
@@ -168,7 +163,7 @@ window.addEventListener("load", HandleNavigation);
 window.addEventListener("hashchange", HandleNavigation);
 listCartItems()
 const login = document.getElementById('login'),
-loginButton = document.getElementById('login-button'),
+loginButton = document.getElementById('login-toggle'),
 closeIcon = document.getElementById('login-close')
 if(loginButton){
   loginButton.addEventListener("click" , ()=>{
@@ -185,7 +180,7 @@ if(closeIcon){
 function Login() {
 const login = document.getElementById('login'),
 logout = document.getElementById('logout'),
-iconLog = document.getElementById('login-button');
+iconLog = document.getElementById('login-toggle');
   var username = document.getElementById('loginUsername').value;
   var password = document.getElementById('loginPassword').value;
 
@@ -246,7 +241,7 @@ function logout() {
   var userName = document.getElementById('loginUsername').value,
   pass = document.getElementById('loginPassword').value,
   logout = document.getElementById('logout'),
-  login= document.getElementById('login-button');
+  login= document.getElementById('login-toggle');
   
   localStorage.removeItem(userName);
   localStorage.removeItem(pass);

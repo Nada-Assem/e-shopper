@@ -6,7 +6,6 @@ async function fillCartPage() {
 
     cards = JSON.parse(localStorage.getItem('cartItems')) || []
      listProduct = [];
-    console.log('a')
     await Promise.all(cards.map(async (item) => {
         let itemDetails = await fetch(`https://fakestoreapi.com/products/${item.id}`)
         itemDetails = await itemDetails.json()
@@ -22,7 +21,6 @@ fillCartPage()
 
 var addDataToHTML = () => {
     listproductHtml.innerHTML = '';
-    console.log( listproductHtml.innerHTML);
     if (listProduct.length > 0) {
         document.getElementById('emptyCart').classList.add('d-none')
         listProduct.forEach(product => {
@@ -222,9 +220,7 @@ var addDataToHTML = () => {
 }
 
 var addDataToHTML1 = () => {
-    console.log('in fun1')
     theRightElement.innerHTML = '';
-    console.log(cards);
     if (cards.length > 0) {
         let subtotal = 0
         listProduct.forEach((product, i) => {

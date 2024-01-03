@@ -60,6 +60,9 @@
                 </ul>
             </div>
             <div class="nav_btns">
+                <div class="logout" id="logout">
+                    <i class='bx bx-log-out' onclick="logout()"></i>
+                </div>
                 <div class="login_taggle" id="login-toggle">
                     <i class="bx bx-user"></i>
                 </div>
@@ -78,7 +81,50 @@
         </nav>
 
     </header>
-
+    <div class="login" id="login">
+        <i class="bx bx-x login_close" id="login-close"></i>
+        <h2 class="login_title-center">Login</h2>
+        <form action="" class="login_from grid">
+                <div class="login_content">
+                    <label class="login_lable">User Name</label>
+                    <input id="loginUsername" type="email" class="login_input" />
+                </div>
+                <div class="login_content">
+                    <label class="login_lable">Password</label>
+                    <input id="loginPassword" type="password" class="login_input" />
+                </div>
+                <div>
+                    <a href="#" class="button" onclick="Login()">Sign in</a>
+                </div>
+    
+                <div>
+                    <p class="signup">Not a member? 
+                        <a id="cRes" onclick="res()">Sign up now</a>
+                    </p>
+                </div>
+        </form>
+    </div>
+    
+    <!------------Register------------->
+    <div class="register" id="register">
+        <i class="bx bx-x register_close" id="register-close"></i>
+        <h2 class="register_title-center">Register</h2>
+        <form action="" class="register_from grid">
+                <div class="register_content">
+                    <label class="register_lable">User Name</label>
+                    <input id="registerUsername" type="email" class="register_input" />
+                </div>
+                <div class="register_content">
+                    <label class="register_lable">Password</label>
+                    <input id="registerPassword" type="password" class="register_input" />
+                </div>
+                <div>
+                    <a href="#" class="button" onclick="register()">Sign up</a>
+                </div>
+    
+                
+        </form>
+    </div>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasRightLabel"></h5>
